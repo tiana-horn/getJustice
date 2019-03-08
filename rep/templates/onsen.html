@@ -171,19 +171,13 @@
 <template id="home.html">
   <ons-page>
     <p class="intro">
-    <br>
   Where social media meets social activism. 
- <br>
-<br>
-<br>
-
-
     </p>
 
     <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
       <div class="title">See Something, Say Something</div>
       <div class="content">See a hate crime or police brutality on social media? Don't just retweet or share it with 
-  your friends. Send a report from your social media page to your local representatives and civil rights organizations that can take action. </div>
+  your friends. Send an incident report from your social media page to your local representatives and civil rights organizations that can take action. </div>
     </ons-card>
     <ons-card onclick="fn.pushPage({'id': 'dialogs.html', 'title': 'Dialogs'})">
       <div class="title">Stay Woke, Take Notes</div>
@@ -195,7 +189,7 @@
     </ons-card>
     <ons-card onclick="fn.pushPage({'id': 'carousel.html', 'title': 'Carousel'})">
       <div class="title">Good News</div>
-      <div class="content">Because life isn't all bad. Take a peek at some of the good happening in the community. #KeepYaHeadUp</div>
+      <div class="content">Life isn't all bad. Take a peek at some of the good happening in the community. #KeepYaHeadUp</div>
     </ons-card>
 
 
@@ -222,7 +216,28 @@
 
 <template id="forms.html">
   <ons-page id="forms-page">
-    <ons-list>
+      <ons-list>
+      <ons-list-header>Type of Report</ons-list-header>
+      <ons-list-item>
+
+
+            <ons-button class="button-margin" id="hate-crime-button" type="button" class="subject-button form-btn btn-lg" data-type="Hate Crime">Hate Crime</ons-button>
+
+            <ons-button class="button-margin" id="police-brut-button" class="subject-button form-btn btn-lg" data-type="Police Brutality">Police Brutality</span></ons-button>
+        </ons-list-item>
+
+
+        <ons-list-header>Incognito</ons-list-header>
+        <ons-list-item>
+          <label class="center" for="switch1">
+            Remain Anonymous?<span id="switch-status">&nbsp;(on)</span>
+          </label>
+          <div class="right">
+            <ons-switch id="model-switch" input-id="switch1" checked="true"></ons-switch>
+          </div>
+        </ons-list-item>
+
+      
       <ons-list-header>Text input</ons-list-header>
       <ons-list-item class="input-items">
         <div class="left">
@@ -247,113 +262,99 @@
         </div>
       </ons-list-item>
 
-      <ons-list-header>Switches</ons-list-header>
-      <ons-list-item>
-        <label class="center" for="switch1">
-          Switch<span id="switch-status">&nbsp;(on)</span>
-        </label>
-        <div class="right">
-          <ons-switch id="model-switch" input-id="switch1" checked="true"></ons-switch>
-        </div>
-      </ons-list-item>
-      <ons-list-item>
-        <label id="enabled-label" class="center" for="switch2">
-          Enabled switch
-        </label>
-        <div class="right">
-          <ons-switch id="disabled-switch" input-id="switch2"></ons-switch>
-        </div>
-      </ons-list-item>
+        <ons-list-header>Who would you like to send your report to? <span id="checkboxes-header"></span></ons-list-header>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox id="aclu-button" class=" checkbox-color email-button civ-rights form-btn btn-sm" data-type="aclupreferences@aclu.org" input-id="checkbox-2" value="aclupreferences@aclu.org" ></ons-checkbox>
+          </label>
+          <label class="center" for="checkbox-5">
+            Department of Justice
+          </label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox class="checkbox-color" input-id="checkbox-0" id="spcl-button" class="email-button hate-crime form-btn btn-sm" data-type="fotc@splcenter.org" value="fotc@splcenter.org"></ons-checkbox>
+          </label>
+          <label class="center" for="checkbox-0">
+            Southern Poverty Law Center
+          </label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox id="naacp-button" class=" checkbox-color email-button civ-rights form-btn btn-sm" data-type="info@naacpnc.org"input-id="checkbox-1" value="info@naacpnc.org" ></ons-checkbox>
+          </label>
+          <label class="center" for="checkbox-1">
+            National Association for the Advancement of Colored People (NAACP)
+          </label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox id="aclu-button" class=" checkbox-color email-button civ-rights form-btn btn-sm" data-type="aclupreferences@aclu.org" input-id="checkbox-2" value="aclupreferences@aclu.org" ></ons-checkbox>
+          </label>
+          <label class="center" for="checkbox-2">
+            American Civil Liberties Union (ACLU)
+          </label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox id="aclu-button" id="scsj-button" class=" checkbox-color email-button police-brut form-btn btn-sm" data-type="info@southerncoalition.org" input-id="checkbox-2" value="info@southerncoalition.org" ></ons-checkbox>
+          </label>
+          <label class="center" for="checkbox-3">
+            Southern Coalition for Social Justice
+          </label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox id="aclu-button" class=" checkbox-color email-button civ-rights form-btn btn-sm" data-type="aclupreferences@aclu.org" input-id="checkbox-2" value="aclupreferences@aclu.org" ></ons-checkbox>
+          </label>
+          <label class="center" for="checkbox-4">
+            American Civil Liberties Union (ACLU)
+          </label>
+        </ons-list-item>
 
-      <ons-list-header>Select</ons-list-header>
-      <ons-list-item>
-        <div class="center">
-          <ons-select id="select-input" style="width: 120px">
-            <option value="Vue">
-              Vue
-            </option>
-            <option value="React">
-              React
-            </option>
-            <option value="Angular">
-              Angular
-            </option>
-          </ons-select>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox id="local-media-button" class=" checkbox-color email-button police-brut form-btn btn-sm" data-type="editors@indyweek.com" input-id="checkbox-2" value="aclupreferences@aclu.org" ></ons-checkbox>
+          </label>
+          <label class="center" for="checkbox-6">
+            Media/News
+          </label>
+        </ons-list-item>
 
+            <!-- ***report form*** -->
+            <div class="container text-center">
+            <br>
+            <br>
+            
+            <form action="{% url 'home' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
+                    {% csrf_token %} 
+                <div class="form-group">
+                    <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required >
+                </div>
+                <div class="form-group">
+                    <input type="text" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="my email address" readonly>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" value="Incident Report From getJustice: " class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included below an image with more information about the incident.
+
+                    Sincerely,
+                    getJustice user
+                    </textarea>
+
+                </div>  
+            <div>
+            <input type="file" name="image">
+                    <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            </form>     
+            </div>
         </div>
-        <div class="right right-label">
-          <span id="awesome-platform">Vue&nbsp;</span>is awesome!
-        </div>
-      </ons-list-item>
+    </div>
+</div>
 
-      <ons-list-header>Radio buttons</ons-list-header>
-      <ons-list-item tappable>
-        <label class="left">
-          <ons-radio class="radio-fruit" input-id="radio-0" value="Apples"></ons-radio>
-        </label>
-        <label for="radio-0" class="center">Apples</label>
-      </ons-list-item>
-      <ons-list-item tappable>
-        <label class="left">
-          <ons-radio class="radio-fruit" input-id="radio-1" value="Bananas" checked></ons-radio>
-        </label>
-        <label for="radio-1" class="center">Bananas</label>
-      </ons-list-item>
-      <ons-list-item tappable modifier="longdivider">
-        <label class="left">
-          <ons-radio class="radio-fruit" input-id="radio-2" value="Oranges"></ons-radio>
-        </label>
-        <label for="radio-2" class="center">Oranges</label>
-      </ons-list-item>
-      <ons-list-item>
-        <div id="fruit-love" class="center">
-          I love Bananas!
-        </div>
-      </ons-list-item>
-
-      <ons-list-header>Checkboxes - <span id="checkboxes-header">Green,Blue</span></ons-list-header>
-      <ons-list-item tappable>
-        <label class="left">
-          <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
-        </label>
-        <label class="center" for="checkbox-0">
-          Red
-        </label>
-      </ons-list-item>
-      <ons-list-item tappable>
-        <label class="left">
-          <ons-checkbox class="checkbox-color" input-id="checkbox-1" value="Green" checked></ons-checkbox>
-        </label>
-        <label class="center" for="checkbox-1">
-          Green
-        </label>
-      </ons-list-item>
-      <ons-list-item tappable>
-        <label class="left">
-          <ons-checkbox class="checkbox-color" input-id="checkbox-2" value="Blue" checked></ons-checkbox>
-        </label>
-        <label class="center" for="checkbox-2">
-          Blue
-        </label>
-      </ons-list-item>
-
-      <ons-list-header>Range slider</ons-list-header>
-      <ons-list-item>
-        Adjust the volume:
-        <ons-row>
-          <ons-col width="40px" style="text-align: center; line-height: 31px;">
-            <ons-icon icon="md-volume-down"></ons-icon>
-          </ons-col>
-          <ons-col>
-            <ons-range id="range-slider" value="25" style="width: 100%;"></ons-range>
-          </ons-col>
-          <ons-col width="40px" style="text-align: center; line-height: 31px;">
-            <ons-icon icon="md-volume-up"></ons-icon>
-          </ons-col>
-        </ons-row>
-        Volume:<span id="volume-value">&nbsp;25</span> <span id="careful-message" style="display: none">&nbsp;(careful, that's loud)</span>
-      </ons-list-item>
-    </ons-list>
 
     <script>
       ons.getScriptPage().onInit = function () {
@@ -400,7 +401,7 @@
             }
           })
         }
-        var currentColors = ['Green', 'Blue'];
+        var currentColors = [];
         const checkboxes = document.querySelectorAll('.checkbox-color')
         for (var i = 0; i < checkboxes.length; i++) {
           var checkbox = checkboxes[i];
@@ -423,6 +424,157 @@
           }
         })
       }
+
+      function get(id) {
+    object = document.getElementById(id)
+    return object
+}
+
+
+
+let subjectHeader = "Report from getJustice: "
+
+function removeComma(toClean){
+    let extraEnd = toClean.value.slice(-2)
+    let extraFront = toClean.value.slice(24, 26)
+    if (extraEnd === ', ') {
+        let newStr = toClean.value.replace(extraEnd, '')
+        toClean.value = newStr
+        let cleanedStr = toClean.value
+        return cleanedStr
+    } else if (extraFront === ', ') {
+        let newStr = toClean.value.replace(extraFront, '')
+        toClean.value = newStr
+        let cleanedStr = toClean.value
+        return cleanedStr
+    }
+}
+
+
+//*** function to remove screenshot ***//
+
+function removeScreenshot() {
+    $('#remove-screenshot').on('click', function () {
+        $('#new-screenshot').remove()
+        $('#no-screenshot').hide()
+    });
+};
+
+
+//***  button functions ***/
+
+function toggelButtons() {
+    buttons = document.querySelectorAll('.form-btn')
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.classList.contains('active')) {
+                button.classList.remove('active')
+            } else {
+                button.classList.add('active')
+            }
+
+        })
+
+    })
+}
+
+
+function addRemoveHateCrimeAdresses() {
+    button = get('hate-crime-button')
+    button.addEventListener('click', () => {
+        $("#formcollapseLink").collapse("show")
+        emails = document.querySelectorAll('.email-button')
+        emails.forEach(email => {
+            if (email.classList.contains('hate-crime')) {
+                email.classList.add('active')
+                newEmail = email.getAttribute('data-type')
+                addressField = get('email-address')
+                if (addressField.value.includes(`${newEmail}, `)) {
+                    email.classList.remove('active')
+                    current = addressField.value
+                    edited = addressField.value.replace(`${newEmail}, `, '')
+                    addressField.value = edited
+                } else {
+                    current = addressField.value
+                    addressField.value = `${newEmail}, ${current}`
+                }
+            }
+        })
+    })
+}
+
+
+function addRemovePoliceBrutailityAdresses() {
+    button = get('police-brut-button')
+    button.addEventListener('click', () => {
+        $("#formcollapseLink").collapse("show")
+        emails = document.querySelectorAll('.email-button')
+        emails.forEach(email => {
+            if (email.classList.contains('police-brut')) {
+                email.classList.add('active')
+                newEmail = email.getAttribute('data-type')
+                addressField = get('email-address')
+                if (addressField.value.includes(`${newEmail}, `)) {
+                    email.classList.remove('active')
+                    current = addressField.value
+                    edited = addressField.value.replace(`${newEmail}, `, '')
+                    addressField.value = edited
+                } else {
+                    current = addressField.value
+                    addressField.value = `${newEmail}, ${current}`
+                }
+            }
+        })
+    })
+}
+
+
+
+
+function addRemoveSubject() {
+    buttons = document.querySelectorAll('.subject-button')
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            let subject = button.getAttribute("data-type")
+            let subjectField = get('subject')
+            if (subjectField.value.includes(`${subject}, `)) {
+                let edited = subjectField.value.replace(`${subject}, `, '')
+                subjectField.value = edited           
+                let toClean = subjectField
+                removeComma(toClean)
+            } else if (subjectField.value.includes(`${subject}`)) {
+                let edited = subjectField.value.replace(`${subject}`, '')
+                subjectField.value = edited
+                let toClean = subjectField
+                removeComma(toClean)
+            } else {
+                let current = subjectField.value
+                subjectField.value = `${current}, ${subject}`
+                let toClean = subjectField
+                removeComma(toClean)
+            }
+        })
+    })
+}
+
+
+function addRemoveEmailAddress() {
+    let buttons = document.querySelectorAll('.email-button')
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            let newAddress = button.getAttribute("data-type")
+            let addressField = get('email-address')
+            if (addressField.value.includes(`${newAddress},`)) {
+                let edited = addressField.value.replace(`${newAddress},`, '')
+                addressField.value = edited
+            } 
+            else {
+                let current = addressField.value
+                addressField.value = `${newAddress}, ${current}`
+            }
+        })
+    })
+}
     </script>
 
     <style>
