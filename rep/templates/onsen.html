@@ -36,7 +36,7 @@
     <ons-tabbar swipeable id="appTabbar" position="auto">
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
       <ons-tab label="Report" icon="ion-edit" page="forms.html"></ons-tab>
-      <ons-tab label="Your Reps" icon="ion-film-marker" page="animations.html"></ons-tab>
+      <ons-tab label="Your Reps" icon="ion-checkmark" page="animations.html"></ons-tab>
     </ons-tabbar>
 
     <script>
@@ -87,7 +87,7 @@
           Your Reps
         </div>
         <div class="right">
-          <ons-icon icon="fa-link"></ons-icon>
+          <ons-icon icon="fa-democrat"></ons-icon>
         </div>
       </ons-list-item>
     </ons-list>
@@ -230,7 +230,7 @@
         <ons-list-header>Incognito</ons-list-header>
         <ons-list-item>
           <label class="center" for="switch1">
-            Remain Anonymous?<span id="switch-status">&nbsp;(on)</span>
+            Remain Anonymous?<span id="switch-status"></span>
           </label>
           <div class="right">
             <ons-switch id="model-switch" input-id="switch1" checked="true"></ons-switch>
@@ -238,7 +238,7 @@
         </ons-list-item>
 
       
-      <ons-list-header>Text input</ons-list-header>
+      <ons-list-header>Name and Email (optional)</ons-list-header>
       <ons-list-item class="input-items">
         <div class="left">
           <ons-icon icon="md-face" class="list-item__icon"></ons-icon>
@@ -249,16 +249,16 @@
       </ons-list-item>
       <ons-list-item class="input-items">
         <div class="left">
-          <ons-icon icon="fa-question-circle-o" class="list-item__icon"></ons-icon>
+          <ons-icon icon="fa-envelope" class="list-item__icon"></ons-icon>
         </div>
         <label class="center">
-        <ons-search-input id="search-input" maxlength="20" placeholder="Search"></ons-search-input>
+        <ons-input id="name-input" float maxlength="20" placeholder="Email"></ons-input>
       </label>
       </ons-list-item>
       <ons-list-item>
         <div class="right right-label">
           <span id="name-display">Hello anonymous!</span>
-          <ons-icon icon="fa-hand-spock-o" size="lg" class="right-icon"></ons-icon>
+          <ons-icon icon="fa-smile-beam" size="lg" class="right-icon"></ons-icon>
         </div>
       </ons-list-item>
 
@@ -322,34 +322,55 @@
         </ons-list-item>
 
             <!-- ***report form*** -->
-            <div class="container text-center">
-            <br>
-            <br>
-            
+            <ons-list-header>Details about the hate crime or police brutality</ons-list-header>
+            <ons-list-item>
             <form action="{% url 'home' %}" id="report-form" method="POST" class="form-group" enctype="multipart/form-data">
                     {% csrf_token %} 
                 <div class="form-group">
-                    <input type="text" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required >
+                    <input type="hidden" name="send_to" class="form-control" id="email-address" maxlength="500" placeholder="Email Recipients" required >
                 </div>
                 <div class="form-group">
-                    <input type="text" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="my email address" readonly>
+                    <input type="hidden" name="reply_to" class="form-control" id="cc-address" value="{{ request.user.email }}" maxlength="500" placeholder="my email address" readonly>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="subject" value="Incident Report From getJustice: " class="form-control" id="subject" maxlength="500" placeholder="Subject" required>
+                    <div class="left">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="message" id="email-body" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included below an image with more information about the incident.
+
+
+                  <ons-list-item class="input-items">
+                    <div class="left">
+                      <ons-icon icon="fa-pen" class="  list-item__icon"></ons-icon>
+                    </div>
+                    <label class="center">
+   
+                    <textarea  class="emailtext form-control" name="message" id="email-body" maxlength="5000"  placeholder="Additional details about the incident(optional)" required>I am a concerned citizen who wishes to raise this issue of civil injustice that I have become aware of. I request you to take up this matter seriously and hope that my concerns, as well as those of others involved in this matter of public importance, will be addressed by you at the earliest.  I have included below an image with more information about the incident.
 
                     Sincerely,
                     getJustice user
                     </textarea>
-
                 </div>  
+                                       <br>
+
             <div>
-            <input type="file" name="image">
-                    <button type="submit" class="btn btn-success">Submit</button>
+            <div class="left">
+            <ons-icon icon="fa-image" class="  list-item__icon"></ons-icon>
+            <ons-input type="file"  name="image">
+                      </div>
+                       <br>
+                    <label class="center">
+            <div class="left">
+           
+
+            <ons-icon icon="fa-paper-plane" class="  list-item__icon"></ons-icon>
+                    <ons-button type="submit" class="btn btn-success">Submit</ons-button>
+             <ons-list-item class="input-items">
+                      </div>
+                    <label class="center">
             </div>
-            </form>     
+
+            </form>   
             </div>
         </div>
     </div>
@@ -582,8 +603,20 @@ function addRemoveEmailAddress() {
         margin-left: 10px;
       }
 
+      .button-margin {
+        margin: 10px 10;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 20px;
+      }
+
+      .emailtext {
+        width: 25rem;
+        height: 15rem;
+      }
+
       .right-label {
-        color: #666;
+        color: #777;
       }
     </style>
   </ons-page>
@@ -972,7 +1005,9 @@ function addRemoveEmailAddress() {
 
     <style>
       .button-margin {
-        margin: 6px 0;
+        margin: 50px 10;
+        margin-top: 5;
+        margin-right: 10px;
       }
     </style>
   </ons-page>
@@ -1165,118 +1200,6 @@ function addRemoveEmailAddress() {
         this.querySelector('ons-toolbar div.center').textContent = this.data.title;
       }
     </script>
-  </ons-page>
-</template>
-
-<template id="progress.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-back-button>Home</ons-back-button>
-      </div>
-      <div class="center"></div>
-    </ons-toolbar>
-
-    <ons-progress-bar id="progress-value" class="progressStyle" value="0"></ons-progress-bar>
-
-    <section style="margin: 40px 16px">
-      <p id="progress-status">
-        Progress: 0%
-      </p>
-
-      <p>
-        <ons-progress-bar class="progressStyle" value="20"></ons-progress-bar>
-      </p>
-
-      <p>
-        <ons-progress-bar class="progressStyle" value="40" secondary-value="80"></ons-progress-bar>
-      </p>
-
-      <p>
-        <ons-progress-bar class="progressStyle" indeterminate></ons-progress-bar>
-      </p>
-
-      <div style="text-align: center; margin: 40px; color: #666">
-        <p>
-          <ons-progress-circular class="progressStyle" value="20"></ons-progress-circular>
-          <ons-progress-circular class="progressStyle" value="40" secondary-value="80"></ons-progress-circular>
-          <ons-progress-circular class="progressStyle" indeterminate></ons-progress-circular>
-        </p>
-
-        <p>
-          <ons-icon icon="ion-load-a" spin size="30px"></ons-icon>
-          <ons-icon icon="ion-load-b" spin size="30px"></ons-icon>
-          <ons-icon icon="ion-load-c" spin size="30px"></ons-icon>
-          <ons-icon icon="ion-load-d" spin size="30px"></ons-icon>
-        </p>
-
-        <p>
-          <ons-icon icon="fa-spinner" spin size="26px"></ons-icon>
-          <ons-icon icon="circle-o-notch" spin size="26px"></ons-icon>
-        </p>
-
-        <p>
-          <ons-icon icon="md-spinner" spin size="30px"></ons-icon>
-        </p>
-      </div>
-
-      <p>
-        <ons-button modifier="large">
-          <ons-icon icon="ion-load-c" spin size="26px"></ons-icon>
-        </ons-button>
-        <br><br>
-        <ons-button modifier="large" disabled>
-          <ons-icon icon="ion-load-c" spin size="26px"></ons-icon>
-        </ons-button>
-      </p>
-    </section>
-
-    <script>
-      ons.getScriptPage().onInit = function () {
-        this.querySelector('ons-toolbar div.center').textContent = this.data.title;
-        if (!ons.platform.isAndroid()) {
-          const progressStyle = document.querySelectorAll('.progressStyle');
-          for (progress of progressStyle) {
-            progress.hasAttribute('modifier') ?
-              progress.setAttribute('modifier', progress.getAttribute('modifier') + ' ios') :
-              progress.setAttribute('modifier', 'ios');
-          }
-        }
-        var progressStatus = document.getElementById('progress-status');
-        var progressValue = document.getElementById('progress-value');
-        var intervalID = 0;
-        intervalID = setInterval(function() {
-          if (progressValue.value === 100) {
-            clearInterval(intervalID);
-            return;
-          }
-          progressValue.value++;
-          progressStatus.innerHTML = `Progress: ${progressValue.value}%`;
-        }, 40);
-      }
-    </script>
-
-    <style>
-      /* 'ios' modifier */
-
-      .progress-bar--ios__primary,
-      .progress-bar--ios.progress-bar--indeterminate::before,
-      .progress-bar--ios.progress-bar--indeterminate::after {
-        background-color: #4282cc
-      }
-
-      .progress-bar--ios__secondary {
-        background-color: #87b6eb;
-      }
-
-      .progress-circular--ios__primary {
-        stroke: #4282cc
-      }
-
-      .progress-circular--ios__secondary {
-        stroke: #87b6eb;
-      }
-    </style>
   </ons-page>
 </template>
 
