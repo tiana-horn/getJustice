@@ -1,0 +1,26 @@
+{
+  "name": "getjustice",
+  "version": "1.0.0",
+  "description": "Where social activism meets social media",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiana-horn/getJustice.git"
+  },
+  "keywords": [
+    "social",
+    "justice"
+  ],
+  "author": "Tiana Horn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiana-horn/getJustice/issues"
+  },
+  "homepage": "https://github.com/tiana-horn/getJustice#readme",
+  "dependencies": {
+    "onsenui": "^2.10.6"
+  }
+}

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
@@ -6,10 +8,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<script src='static/js/onsen.js' defer></script>
+<script src={% static 'css/js/js/onsenui.js' %} defer></script>
+<link rel="stylesheet" href={% static 'css/css/dark-onsen-css-components.css' %}>
+<link rel="stylesheet" href={% static 'css/css/onsenui.css' %}>
+
+
+
 
 </head>
 
@@ -150,7 +155,7 @@
     <style>
       .profile-pic {
         width: 200px;
-        background-color: #fff;
+        background-color: #0d0d0d;
         margin: 20px auto 10px;
         border: 1px solid #999;
         border-radius: 4px;
