@@ -10,10 +10,10 @@
   --button-background-color: var(--highlight-color);
   --button-cta-background-color: var(--second-highlight-color);
   --button-light-color: white;
-  --toolbar-background-color: #181818;
+  --toolbar-background-color: #ff0000;
   --toolbar-button-color: var(--highlight-color);
   --toolbar-text-color: #fff;
-  --toolbar-border-color: #242424;
+  --toolbar-border-color: #ff0000;
   --button-bar-color: var(--highlight-color);
   --button-bar-active-text-color: #fff;
   --button-bar-active-background-color: color(var(--button-bar-color) b(80%));
@@ -85,7 +85,7 @@
   --material-range-disabled-thumb-color: #4f4f4f;
   --material-range-disabled-thumb-border-color: #303030;
   --material-range-zero-thumb-color: #0d0d0d;
-  --material-toolbar-background-color: #212121;
+  --material-toolbar-background-color: #ff0000;
   --material-toolbar-text-color: #ffffff;
   --material-toolbar-button-color: var(--toolbar-button-color);
   --material-segment-background-color: #292929;

@@ -86,16 +86,16 @@ input:active, input:focus, textarea:active, textarea:focus, select:active, selec
   outline: none;
 }
 h1 {
-  font-size: 36px;
+  font-size: 38px;
 }
 h2 {
-  font-size: 30px;
+  font-size: 32px;
 }
 h3 {
-  font-size: 24px;
+  font-size: 26px;
 }
 h4, h5, h6 {
-  font-size: 18px;
+  font-size: 20px;
 }
 :root {
 }
@@ -790,7 +790,7 @@ h4, h5, h6 {
   height: 44px;
   padding-left: 0;
   padding-right: 0;
-  background: #181818;
+  background: #FF0000;
   color: #fff;
   box-shadow: none;
   font-weight: 400;
@@ -800,7 +800,7 @@ h4, h5, h6 {
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-image: linear-gradient(0deg, #242424, #242424 100%);
+  background-image: linear-gradient(0deg, #FF0000, #FF000 100%);
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .toolbar {
@@ -808,7 +808,7 @@ h4, h5, h6 {
   }
 }
 .toolbar__bg {
-  background: #181818;
+  background: #FF0000;
 }
 .toolbar__item {
   box-sizing: border-box;
@@ -963,12 +963,12 @@ h4, h5, h6 {
   height: 44px;
   padding-left: 0;
   padding-right: 0;
-  background: #181818;
+  background: #228b22;
   color: #fff;
   box-shadow: none;
   font-weight: 400;
   border-bottom: none;
-  border-top: 1px solid #242424;
+  border-top: 1px solid #228b22;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -1047,7 +1047,7 @@ h4, h5, h6 {
   border-bottom: 0;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
   padding: 0;
-  background-color: #212121;
+  background-color: #228b22;
   background-size: 0;
 }
 /*~
@@ -1204,7 +1204,7 @@ h4, h5, h6 {
   letter-spacing: 0;
   color: white;
   vertical-align: middle;
-  background-color: #ffa101;
+  background-color: #228b22;
   border: 0 solid currentColor;
   border-radius: 3px;
   transition: none;
@@ -1216,7 +1216,7 @@ h4, h5, h6 {
   transition: none;
 }
 .button:active {
-  background-color: #ffa101;
+  background-color: #228b22;
   transition: none;
   opacity: 0.2;
 }
@@ -2138,7 +2138,7 @@ h4, h5, h6 {
   margin: 0;
   padding: 0;
   height: 49px;
-  background-color: #212121;
+  background-color: #ff0000;
   border-top: 1px solid #0d0d0d;
   width: 100%;
 }
@@ -2148,7 +2148,7 @@ h4, h5, h6 {
     background-size: 100% 1px;
     background-repeat: no-repeat;
     background-position: top;
-    background-image: linear-gradient(180deg, #0d0d0d, #0d0d0d 50%, transparent 50%);
+    background-image: linear-gradient(180deg, #ff0000, #ff0000 50%, transparent 50%);
   }
 }
 .tabbar__item {
@@ -2363,7 +2363,7 @@ h4, h5, h6 {
   right: 0;
   bottom: auto;
   border-top: none;
-  border-bottom: 1px solid #0d0d0d;
+  border-bottom: 1px solid #228b22;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .tabbar--top {
@@ -6519,7 +6519,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
   height: 56px;
   font-size: 20px;
   text-align: center;
-  color: #ffa101;
+  color: #228b22;
   background-color: rgba(255, 255, 255, .9);
   border-radius: 0;
   line-height: 56px;
@@ -6724,7 +6724,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
 }
 .card__content {
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.4;
   color: #fff;
 }
@@ -6773,7 +6773,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
   font-weight: 400;
 }
 .card--material__content {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.46);
 }
