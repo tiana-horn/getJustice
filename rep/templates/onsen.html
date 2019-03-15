@@ -628,15 +628,22 @@ function addRemoveEmailAddress() {
   </ons-page>
 </template>
 
+
+{% comment %} Your Representatives Page  {% endcomment %}
+
 <template id="animations.html">
   <ons-page>
     <ons-list>
     <ons-list-item class="input-items">
         <div class="left">
-        <h3> Type in your zipcode to find your state and federal representatives </h3>
+        <ons-list-header> Type in your zipcode to find your state and federal representatives </ons-list-header>
         </div>
+        <ons-list-item>
         <label class="right">
         <ons-search-input id="search-input" maxlength="20" placeholder="Zipcode"></ons-search-input>
+      </label>
+      <label class="left">
+      <ons-button id="search-button" modifier="Normal">Search</ons-button>
       </label>
       </ons-list-item>
      <ons-list-header > State Representatives </ons-list-header>
