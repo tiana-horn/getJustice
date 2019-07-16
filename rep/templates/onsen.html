@@ -650,14 +650,50 @@ function addRemoveEmailAddress() {
      <div id='search-results' class='content'></div>
      </ons-list-item>
     </ons-list>
-     
-  </ons-page>
-</template>
-
-
-
+    
     <script>
 
+let searchButton = document.getElementById('search-button')
+let searchField = document.getElementById('search-field')
+let chooseInfo = document.querySelectorAll('search-results')
+
+//event listeners for search
+searchButton.addEventListener('click', function (event) {
+    searchApi()
+})
+
+searchField.addEventListener('keyup', function (event) {
+    if (event.keyCode === 13) {
+      searchApi()
+    }
+  })
+
+function searchApi (event) {
+    $.ajax({
+        url: 'http://api.votesmart.org/CandidateBio.getByZip?key',
+        jsonp: "callback",
+        method: "GET",
+        headers: {
+        datatype: "application/json",
+        key: "ADF9577E-4D21-6774-C97E-BFB2464AF4F9"
+      },
+        data: {
+            term: searchField.value
+        },
+        success: function (info) {
+            let searchResults = document.getElementById('search-results')
+            searchResults.innerHTML= ''
+            for (let item of info.results) {
+                //Creating elements of each song
+                let firstName = document.createElement('div')
+
+                firstName.innerText = item.firstName
+
+                searchResults.appendChild(firstName)
+            }
+        }
+    })
+}
 
     </script>
 
