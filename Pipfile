@@ -6,14 +6,17 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
+python-dotenv = "==0.10.1"
+gunicorn = "==19.9.0"
+django-heroku = "==0.3.1"
+urllib3 = "==1.25.1"
+dj-database-url = "==0.5.0"
 psycopg2 = "*"
-pillow = "*"
-python-dotenv = "*"
-gunicorn = "*"
-django-heroku = "*"
-urllib3 = "*"
-
+pytz = "==2019.1"
+sqlparse = "==0.3.0"
+whitenoise = "==4.1.2"
+Django = "==2.2"
+Pillow = "==6.0.0"
 
 [requires]
 python_version = "3.7"
